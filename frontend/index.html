@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASR Benchmark Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Speech To Text using CNN_LSTM in comparision with GEMINI</h1>
+        <div id="controls">
+            <button id="recordButton">Start Recording</button>
+            <button id="stopButton" disabled>Stop Recording & Transcribe</button>
+            <input type="text" id="referenceText" placeholder="Enter Reference Text (for WER calculation)">
+        </div>
+
+        <div id="results">
+            <h2>Latest Transcription Results</h2>
+            <div id="statusMessage" class="message">Waiting for recording...</div>
+            <table id="resultsTable">
+                <thead>
+                    <tr><th>Provider</th><th>Transcription</th><th>Latency (ms)</th><th>WER</th></tr>
+                </thead>
+                <tbody>
+                    <tr id="localRow"><td>Local</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr id="geminiRow"><td>Gemini</td><td>-</td><td>-</td><td>-</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="metrics" class="metrics-section">
+            <h2>Cumulative Performance Metrics (Last <span id="sampleCount">0</span> Samples)</h2>
+            <div class="stats">
+                <p>Avg Local WER: <span id="avgLocalWer">-</span></p>
+                <p>Avg Gemini WER: <span id="avgGeminiWer">-</span></p>
+                <p>Avg Local Time: <span id="avgLocalTime">-</span>ms</p>
+                <p>Avg Gemini Time: <span id="avgGeminiTime">-</span>ms</p>
+            </div>
+            <div id="charts-container">
+                <div class="chart-box"><h3>1. WER Trend</h3><img id="chartWerTrend" /></div>
+                <div class="chart-box"><h3>2. Time Trend</h3><img id="chartTimeTrend" /></div>
+                <div class="chart-box"><h3>3. Avg WER</h3><img id="chartAvgWer" /></div>
+                <div class="chart-box"><h3>4. Avg Time</h3><img id="chartAvgTime" /></div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+timestamp,filename,local_text,gemini_text,local_latency_ms,gemini_latency_ms,reference,local_wer,gemini_wer
+1762597320.524902,audio.webm,hallo,Hello,275.79,6459.11,hello,1.0,0.0
+1762597393.3515387,audio.webm,my,Bye.,286.85,5968.54,bye,1.0,1.0
+1762597410.7408173,audio.webm,thank you,Thank you.,286.0,5660.31,thank you,0.0,0.5
+1762597503.5240932,audio.webm,hallo,Hello electronic tone,323.13,7400.61,hello,1.0,2.0
